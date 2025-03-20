@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
@@ -19,7 +20,7 @@
       </header>
 
       <main>
-        <form>
+        <form id="poem-generator-form">
           <input
             type="text"
             placeholder="Enter the topic of the French poem"
@@ -30,22 +31,15 @@
           />
           <input type="submit" class="submit-button" />
         </form>
-        <div class="poem">
-          A trusting little leaf of green,
-          <br />
-          A bold audacious frost;
-          <br />
-          A rendezvous, a kiss or two,
-          <br />
-          And youth for ever lost.
-        </div>
+        <div class="poem" id="poem"></div>
       </main>
 
       <footer>
         Coded by
         <a href="https://github.com/savi-creates" target="_blank"
           >Savannah Andresson,</a
-        >is
+        >
+        is
         <a
           href="https://github.com/savi-creates/ai-poem-generator"
           target="_blank"
