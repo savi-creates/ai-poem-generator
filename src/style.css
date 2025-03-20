@@ -1,6 +1,30 @@
 body {
-  background-color: #f9f7fe;
+  background: linear-gradient(
+    109.6deg,
+    rgb(9, 9, 121) 11.2%,
+    rgb(144, 6, 161) 53.7%,
+    rgb(0, 212, 255) 100.2%
+  );
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .container {
@@ -15,9 +39,17 @@ header {
 h1 {
   text-align: center;
   font-weight: 800;
-  font-size: 36px;
+  font-size: 60px;
   line-height: 1.5;
-  color: #272044;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+h2 {
+  text-align: center;
+  color: rgb(255, 255, 114);
+  font-size: 30px;
+  margin-top: -18px;
 }
 
 .form-container {
@@ -52,13 +84,21 @@ form {
 
 .submit-button {
   margin-left: 10px;
-  background-color: #885df1;
+  background-color: #8e06a1;
   color: white;
   border: none;
   border-radius: 50px;
   padding: 14px 24px;
   width: 150px;
   font-size: 16px;
+  position: relative;
+  z-index: 10;
+}
+
+.submit-button:hover {
+  transform: scale(1.02);
+  transition: all 0.2s ease-in;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 .poem {
@@ -74,14 +114,15 @@ footer {
   text-align: center;
   font-size: 13px;
   margin-top: 30px;
+  color: white;
 }
 
 footer a {
-  color: #885df1;
+  color: rgb(255, 255, 114);
   text-decoration: none;
 }
 footer a:hover {
-  color: rgb(111, 76, 202);
+  color: rgb(199, 199, 83);
   text-decoration: underline;
 }
 
@@ -101,5 +142,40 @@ footer a:hover {
 @-webkit-keyframes blink-animation {
   to {
     visibility: hidden;
+  }
+}
+
+.floating-words {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.word {
+  position: absolute;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.3);
+  font-style: italic;
+  opacity: 0;
+  animation: float 8s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh);
+    opacity: 0;
   }
 }
